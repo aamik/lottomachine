@@ -7,12 +7,10 @@ RANGE_OF_NUMBERS = 40 # Lottokoneen sisältämät numerot, eli kaikki vaihtoehdo
 import random
 import math
 import time
-from unittest import result 
 import tkinter as tk
 import os
-from tkinter import filedialog
-from matplotlib.lines import lineStyles 
 import matplotlib.pyplot as plt 
+from tkinter import filedialog
 
 plt.ion() # Matplotlib interactive mode, graafeja voidaan muokata lennosta
 
@@ -125,8 +123,14 @@ def main():
            
                        
        # Kaikki main()-funktion mahdolliset poikkeukset samassa
+        except ValueError as ve:
+            print(f"ValueError: {ve}")
+        except IndexError as ie:
+            print(f"IndexError: {ie}")
+        except KeyboardInterrupt:
+            print("Operation interrupted by the user.")
         except Exception as e:
-            print(f"An error occurred: {e}")
+            print(f"An unexpected error occurred: {e}")
             
         finally:
             # Piirretään kumulatiivisen todennäköisyyden kuvaaja
