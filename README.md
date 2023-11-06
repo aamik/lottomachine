@@ -1,0 +1,2 @@
+# lottomachine
+Python lottery machine
