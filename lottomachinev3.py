@@ -7,24 +7,23 @@ RANGE_OF_NUMBERS = 40 # Lottokoneen sisältämät numerot, eli kaikki vaihtoehdo
 import random
 import math
 import time
-from unittest import result # ?????????????????
+from unittest import result 
 import tkinter as tk
 import os
 from tkinter import filedialog
-from matplotlib.lines import lineStyles # ??????????????????
-import matplotlib.pyplot as plt # numpya ei tällä datalla tarvita
+from matplotlib.lines import lineStyles 
+import matplotlib.pyplot as plt 
 
-# Määritellään matplotlibin muuttujat
-plt.ion()
+plt.ion() # Matplotlib interactive mode, graafeja voidaan muokata lennosta
 
-# Tuodaan oma moduuli animaatiolle harjoitusmielessä
+# Tuodaan oma moduuli animaatiolle
 import lotto_animation
 
 
-all_results = []
 
+# Määritellään luokat ja funktiot
 
-#Luokka Lottery sisältää tarvittavat määritelmät NUM_LOTTERY_NUMBERS/RANGE_OF_NUMBERS tyyppisen loton lukujen arvontaan
+# Luokka Lottery sisältää tarvittavat määritelmät NUM_LOTTERY_NUMBERS/RANGE_OF_NUMBERS tyyppisen loton lukujen arvontaan
 class Lottery:
     def __init__(self):
         self.lottery_numbers = set()
@@ -44,8 +43,6 @@ def calculate_probability(num_matched):
     total_combinations = math.comb(RANGE_OF_NUMBERS, NUM_LOTTERY_NUMBERS)       
     favorable_outcomes = math.comb(NUM_LOTTERY_NUMBERS, num_matched) * math.comb(RANGE_OF_NUMBERS - NUM_LOTTERY_NUMBERS, NUM_LOTTERY_NUMBERS - num_matched) 
     probability = favorable_outcomes / total_combinations
-    results = (num_matched, probability)
-    all_results.append(results)
     return probability
     
 
@@ -80,13 +77,13 @@ def get_user_numbers():
 
 
 
-# Pääfunktio jossa kaikki muu ajetaan
+# Pääfunktio
 def main():
     print("Welcome to the Lottery Machine!")
     play_again = "y"
     num_tries = 1 # "Yritys 0" kuulostaisi oudolta
 
-    
+    # Parhaan tuloksen tuple
     best_result = (0, 0.0)
 
 
@@ -96,7 +93,7 @@ def main():
 
 
 
-    # Uudestaanpeluu-looppi
+    # Uudestaanpeluu-looppi "alku"
     while play_again.lower() == "y" or "p":
         try:                    
             lottery = Lottery()
@@ -135,7 +132,7 @@ def main():
             # Piirretään kumulatiivisen todennäköisyyden kuvaaja
             plot_cumulative_probability(num_tries)
 
-            # Uudestaanpeluu-looppi
+            # Uudestaanpeluu-looppi "haara"
             print("Your cumulative probability changes according to the number of matches you get in subsequent runs.")
             play_again = input("Would you like to play again using your inputted numbers? \n (y=yes, n=no (exit), p=plot 10 runs, s=save results): ")
             if play_again.lower() == "y":
@@ -151,7 +148,7 @@ def main():
 
             
             
-            # Haluaako käyttäjä tallentaa tulokset tekstitiedostoon, a = append
+            # Haluaako käyttäjä tallentaa tulokset tekstitiedostoon, w = write, aina uusi tiedosto
             elif play_again.lower() == "s":
                 try:
                     root = tk.Tk()
@@ -193,6 +190,3 @@ def main():
 # Tässä main() ajetaan vain, jos Pythonin kääntäjä on nimennyt tiedoston "__main__", joka tarkoittaa, että main-funktiota ollaan ajamassa suoraan
 if __name__ == "__main__":
     main()
-
-
-
