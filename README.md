@@ -12,7 +12,7 @@ This program simulates a lottery game where the user can choose their own lotter
 - **Save Results:** The program provides an option to save the results of each run to a text file.
 
 ## Usage
-Please make sure you have Python 3.6 or higher installed. To run the program, simply call the `main()` function. The program will guide you through the process of inputting your lottery numbers and starting the game. After each run, you will be given the option to play again, plot the results of 10 runs, or save the results to a text file.
+Please make sure you have Python 3.6 or higher installed. To run the program, simply call the `main()` function from `lottomachinev3.py`. The program will guide you through the process of inputting your lottery numbers and starting the game. After each run, you will be given the option to play again, plot the results of 10 runs, or save the results to a text file.
 
 ## Dependencies
 The program requires the following Python libraries:
@@ -34,3 +34,4 @@ Please ensure these libraries are installed before running the program.
 ## Acknowledgments:
 
 This project uses the Matplotlib library for data visualization.
+
