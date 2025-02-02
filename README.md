@@ -1,7 +1,7 @@
 # Lottery Simulation Program aka Lottomachine
 
 ## Description
-This program simulates a lottery game where the user can choose their own lottery numbers and see how they fare against a series of simulated lottery draws. The program provides a variety of features including calculating the probability of matching numbers, plotting the cumulative probability over multiple runs, and saving the results to a text file. Code comments in Finnish. 
+This was one of my first Python programs, done for a course. It was a fun little project with animations in terminal. This program simulates a lottery game where the user can choose their own lottery numbers and see how they fare against a series of simulated lottery draws. The program provides a variety of features including calculating the probability of matching numbers, plotting the cumulative probability over multiple runs, and saving the results to a text file. Code comments in Finnish. 
 
 ## Features
 - **User Input:** The program allows the user to input their own lottery numbers at the start of the game.
